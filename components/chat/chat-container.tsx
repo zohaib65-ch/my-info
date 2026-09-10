@@ -7,6 +7,7 @@ import { ChatMessage } from "@/components/chat/chat-message";
 import { ChatWelcome } from "@/components/chat/chat-welcome";
 import { ChatInput } from "@/components/chat/chat-input";
 import { TypingIndicator } from "@/components/chat/typing-indicator";
+import { cn } from "@/lib/utils";
 
 interface ChatContainerProps {
   className?: string;
@@ -47,9 +48,10 @@ export function ChatContainer({ className }: ChatContainerProps) {
 
   return (
     <div
-      className={`relative flex flex-col h-full max-h-[820px] w-full max-w-3xl mx-auto rounded-2xl border border-zinc-200/90 dark:border-zinc-800 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-xl shadow-xl shadow-zinc-500/5 dark:shadow-black/40 overflow-hidden ${
-        className ?? ""
-      }`}
+      className={cn(
+        "relative flex flex-col h-full w-full mx-auto rounded-2xl sm:rounded-3xl border border-zinc-200/90 dark:border-zinc-850 bg-white/90 dark:bg-zinc-950/90 backdrop-blur-xl shadow-2xl shadow-zinc-500/10 dark:shadow-black/60 overflow-hidden",
+        className
+      )}
     >
       {/* Header */}
       <ChatHeader
